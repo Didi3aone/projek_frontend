@@ -97,4 +97,58 @@ body { padding-top: 70px; }
 }
 /*brand*/
 
+/*collapse panel*/
+.clickable{
+    cursor: pointer;   
+}
 
+.panel-heading span {
+  margin-top: -20px;
+  font-size: 15px;
+}
+.panel-warnings>.panel-heading {
+    color: #293c69;
+    background-color: #ffffff;
+    border-color: #fff;
+}
+.panel-titles {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black;
+}
+/*end*/
+
+/*form inline*/
+.forms-inline > * {
+      margin:15px 3px !important;
+  }
+/*dropzone*/
+.dropzone {
+    background: white;
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 135, 247);
+    border-image: none;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*end*/
+/*button style*/
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.btns {
+  background: transparent;
+}
+.btn-defaults {
+color: #286090;
+background-color: #fff;
+border-color: #1888e8;
+}
