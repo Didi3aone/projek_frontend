@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Profile extends CI_Controller {
 
+	private $_title = 'Data Profile';
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,6 +22,12 @@ class Profile extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data = array(
+			'title' => $this->_title
+		);
+
+		$this->load->view('header', $data);
 		$this->load->view('index');
+		$this->load->view('footer');
 	}
 }
