@@ -1,54 +1,34 @@
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+$(document).on('click', '.panel-heading span.clickable', function(e){
+    var $this = $(this);
+  if(!$this.hasClass('panel-collapsed')) {
+    $this.parents('.panel').find('.panel-body').slideUp();
+    $this.addClass('panel-collapsed');
+    $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+  } else {
+    $this.parents('.panel').find('.panel-body').slideDown();
+    $this.removeClass('panel-collapsed');
+    $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+  }
+})
 
-    });
-	var acc = document.getElementsByClassName("accordion");
-	var i;
-
-	for (i = 0; i < acc.length; i++) {
-	    acc[i].onclick = function() {
-	    this.classList.toggle("active");
-	    var panel = this.nextElementSibling;
-	    if (panel.style.maxHeight){
-	      panel.style.maxHeight = null;
-	    } else {
-	      panel.style.maxHeight = panel.scrollHeight + "px";
-	    } 
-    }
-
-    popup = {
-      init: function(){
-        $('figure').click(function(){
-          popup.open($(this));
-        });
-        
-        $(document).on('click', '.popup img', function(){
-          return false;
-        }).on('click', '.popup', function(){
-          popup.close();
-        })
-      },
-      open: function($figure) {
-        $('.gallery').addClass('pop');
-        $popup = $('<div class="popup" />').appendTo($('body'));
-        $fig = $figure.clone().appendTo($('.popup'));
-        $bg = $('<div class="bg" />').appendTo($('.popup'));
-        $close = $('<div class="close"><svg><use xlink:href="#close"></use></svg></div>').appendTo($fig);
-        $shadow = $('<div class="shadow" />').appendTo($fig);
-        src = $('img', $fig).attr('src');
-        $shadow.css({backgroundImage: 'url(' + src + ')'});
-        $bg.css({backgroundImage: 'url(' + src + ')'});
-        setTimeout(function(){
-          $('.popup').addClass('pop');
-        }, 10);
-      },
-      close: function(){
-        $('.gallery, .popup').removeClass('pop');
-        setTimeout(function(){
-          $('.popup').remove()
-        }, 100);
+var dropzone = new Dropzone('#demo-upload', {
+  previewTemplate: document.querySelector('#preview-template').innerHTML,
+  parallelUploads: 2,
+  thumbnailHeight: 120,
+  thumbnailWidth: 120,
+  maxFilesize: 3,
+  filesizeBase: 1000,
+  thumbnail: function(file, dataUrl) {
+    if (file.previewElement) {
+      file.previewElement.classList.remove("dz-file-preview");
+      var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+      for (var i = 0; i < images.length; i++) {
+        var thumbnailElement = images[i];
+        thumbnailElement.alt = file.name;
+        thumbnailElement.src = dataUrl;
       }
+      setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
     }
+  }
 
-    popup.init()
-}
+});

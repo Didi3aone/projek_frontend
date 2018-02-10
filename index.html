@@ -19,8 +19,10 @@
 <body>
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/effect.js"></script>
+	<script type="text/javascript" src="assets/js/dropzone.js"></script>
 	<script>
 		$(function () {
 			$('[data-tooltip="tooltip"]').tooltip()
@@ -28,224 +30,532 @@
 	</script>
 	<!-- end ./ -->
 
-	<!-- Fixed navbar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-	 		<div class="navbar-header">
-	 			<button style="background:#FFF;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	 				<span class="sr-only">Toggle navigation</span>
-	 				<span class="icon-bar"></span>
-	 				<span class="icon-bar"></span>
-	 				<span class="icon-bar"></span>
-	 			</button>
-	 			<div class="nav-navbar navbar-brand"></div>
-	 		</div>
-	 		<div class="col-md-4"></div>
-	 		<div id="navbar" class="navbar-collapse collapse">
-	 			<form class="navbar-form navbar-left" style="border:none;">
-	                <div class="input-group">
-	                	<input type="text" class="form-control" placeholder="Search for..." style="border-right:#FFF;">
-	                	<span class="input-group-btn">
-				        <button class="btn btn-default" type="button" style="border-left:#FFF;">
-				        	<span class="glyphicon glyphicon-search"></span>
-				        </button>
-				      </span>
-				    </div>
-				</form>
-	 			<ul class="nav navbar-nav">
-	 				<li class=""><a href="#">Products</a></li>
-	 				<li><a href="#about">How it works</a></li>
-	 				<li>
-	 					<a href="#contact" aria-controls="contact" role="tab" data-toggle="tab" style="background:#0D69B7;" >FaQ</a>
-	 				</li>
-	 				<li>
-	 					<a href="#loginIn" aria-controls="loginIn" role="tab" data-toggle="tab" style="background:#0D69B7;">Log In</a>
-	 				</li>
-	 			</ul>
-	 		</div><!--/.nav-collapse -->
-	 	</div>
-	</nav>
-	<!-- end </nav> -->
+		 <!-- Fixed navbar -->
+	<nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="http://carmarket.towert.win/assets/images/logo.jpg" alt="Brand Logo" class="img-responsive">
+                </a>
+            </div>
 
-	<!-- content -->
-	<div class="container" style="margin-bottom:10vh;">
-		<div class="col-sm-12">
-			<div class="tab-content"> <!-- Tab panes -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Products</a></li>
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log in <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <form action="#" onsubmit="return false" id="form-login">
+                                <!-- Metronic -->
+                                <li class="form-group form-md-line-input form-md-floating-label">
+                                    <input name="email" type="email" class="form-control" id="input-email" required="required">
+                                    <label for="input-email">Email</label>
+                                    <span class="help-block">Your email address ...</span>
+                                </li>
+                                <li class="form-group form-md-line-input form-md-floating-label">
+                                    <input name="password" type="password" type="text" class="form-control" id="input-password" required="required">
+                                    <label for="input-password">Password</label>
+                                    <span class="help-block">Your password ...</span>
+                                </li>
+                                <!-- End Metronic -->
+                                
+                                <li class="clearfix login-hint">
+                                    <div class="login-hint__item checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember Me
+                                        </label>
+                                    </div>
+                                    <div class="login-hint__item text-right">
+                                        <a href="http://carmarket.towert.win/forgetpass">Forgot Password?</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                                </li>
+                            </form>
+                        </ul>
+                    </li>
+                                    </ul>
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Here" style="border-right:none;">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit" style="border-left:none;">
+                                	<span class="glyphicon glyphicon-search"></span>
+                               	</button>
+                            </span>
+                        </div>
+                    </div>
+                </form> <!-- /.navbar-form -->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
 
-				<div id="contact" role="tabpanel" class="tab-pane fade" > <!-- pane1 -->
-					<div class="row">
-						Content Contact
-					</div>
-				</div> <!-- end panel1 -->
-
-				<div id="loginIn" role="tabpanel" class="tab-pane fade"> <!-- panel2 -->
-					<div class="row">
-						<div class="col-md-4"></div>
-						<div class="col-md-4">
-							<div class="panel panel-primary" >
-								<div class="panel-heading">
-									<div class="panel-title">Personal</div>
-								</div>     
-								<div style="padding-top:30px" class="panel-body" >
-									<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-									<form id="loginform" class="form-horizontal" role="form">
-										<div style="margin-bottom: 25px" class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
-										</div>
-
-										<div style="margin-bottom: 25px" class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-											<input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-										</div>
-
-										<div class="input-group">
-											<div class="checkbox">
-												<label>
-													<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-												</label>
-											</div>
-										</div>
-
-
-										<div style="margin-top:10px" class="form-group">
-											<div class="col-sm-12 controls">
-												<a id="btn-login" href="#" class="btn btn-success">Login  </a>
-												<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
-											</div>
-										</div>
-
-
-										<div class="form-group">
-											<div class="col-md-12 control">
-												<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-													Don't have an account! 
-													<a href="#signup" aria-controls="signup" role="tab" data-toggle="tab">Sign Up Here</a>
-												</div>
-											</div>
-										</div>    
-									</form>     
-								</div>                     
-							</div>  
-						</div>
-						<div class="col-md-4"></div>
-					</div>
-				</div> <!-- end panel2 -->
-
-				<div id="signup" role="tabpanel" class="tab-pane fade"><!--panel Sigup -->
-					<div class="col-sm-12">
-						
-						<div class="col-sm-12">USER PROFILE</div><br />
-						<div class="col-sm-6">
-							<form class="form-horizontal">
-								<div class="panel panel-primary">
-									<div class="panel-heading">
-										PERSONAL
-										<a href="#" style="color:#FFF;" data-toggle="modal" data-target="#modal_personal">
-											<i class="fa fa-edit pull-right"></i>
-										</a>
-									</div>
-									<div class="panel-body">
-										<div class="col-sm-4">
-	    									<a href="#" class="thumbnail text-center">
-	      										<img src="assets/icons/avatar.png" alt="..." class="fa fa-5x">
-	   									 	</a>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="names" class="form-control" placeholder="Name" />
-											</div>
-											<div class="form-group">
-												<input type="email" name="emails" class="form-control" placeholder="Email" />
-											</div>
-											<div class="form-group">
-												<input type="number" name="phones" class="form-control" placeholder="Telephone" />
-											</div>
-											<div class="form-group form-inline">
-												<select name="province" id="province" class="form-control">
-													<option value="">-- Chose Province --</option>
-												</select>
-												<select name="city" id="city" class="form-control">
-													<option value="">-- Chose City--</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<input type="text" name="districts" class="form-control" placeholder="Sub District" />
-											</div>
-											<div class="form-group">
-												<input type="text" name="address" class="form-control" placeholder="Address" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>						
-						</div>
-						<div class="col-sm-6">
-							<form>
-								<div class="panel panel-primary">
-									<div class="panel-heading">
-										BANK ACCOUNT
-										<a href="#" style="color:#FFF;" data-toggle="modal" data-target="#modal_bank">
-											<i class="fa fa-edit pull-right"></i>
-										</a>
-									</div>
-									<div class="panel-body" style="height: 50vh;">
-										<div class="form-group">
-											<input type="text" name="bank_names" class="form-control" placeholder="Bank Name" />
-										</div>
-										<div class="form-group">
-											<input type="text" name="account_numbers" class="form-control" placeholder="Account Number" />
-										</div>
-										<div class="form-group">
-											<input type="text" name="account_holder" class="form-control" placeholder="Account Holder Name" />
-										</div>
-									</div>
-								</div>
-							</form>						
-						</div>
-						<div class="col-sm-12 text-center">
-							<a href="#collapseDocument" style="color:#000;text-decoration:none;" data-toggle="collapse" expanded="false" aria-controls="collapseDocument" >
-								<h3>DOCUMENT&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></h3>
+		<!-- end </nav> -->
+	<div class="container">
+			<div class="col-sm-12">
+				<br /><b>USER PROFILE</b>
+			</div>
+			<div class="col-sm-12 text-right">
+				<p><a href="" class="btn btn-primary btn-md text-right">Swittch Account as Vendo</a></p>
+			</div>
+			<div class="col-sm-6">
+				<form class="form-horizontal">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							PERSONAL
+							<a href="#" style="color:#FFF;" data-toggle="modal" data-target="#modal_personal">
+								<i class="fa fa-edit pull-right"></i>
 							</a>
 						</div>
-						<div id="collapseDocument" class="collapse col-sm-12">
-							<!-- <div class="col-sm-6"> -->
-								<ul class="nav nav-pills nav-stacked">
-								  <li role="presentation" class="col-md-3 active"><a href="#">1. Upload KTP</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">2. Upload Surat Nikah</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">3. Upload Kartu Keluarga</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">4. Upload Rekening Koran</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">5. Upload NPWP</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">6. Upload Slip Gaji</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">7. Upload SIUP</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">8. Upload Kepemilikan Rumah</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">9. Upload Izin Rumah</a></li><hr />
-								  <li role="presentation" class="col-md-3 active"><a href="#">10. Upload Laporan Keuangan</a></li><hr />
-								</ul>								
-							<!-- </div> -->
-							<!-- <div class="col-sm-6">
-								budi aman prasetyo
-							</div> -->
+						<div class="panel-body">
+							<div class="col-sm-4">
+								<a href="#" class="thumbnail text-center">
+									<img src="assets/icons/avatar.png" alt="..." class="fa fa-5x">
+								</a>
+							</div>
+							<div class="col-sm-8">
+								<div class="form-group">
+									<input type="text" name="names" class="form-control" placeholder="Name" />
+								</div>
+								<div class="form-group">
+									<input type="email" name="emails" class="form-control" placeholder="Email" />
+								</div>
+								<div class="form-group">
+									<input type="number" name="phones" class="form-control" placeholder="Telephone" />
+								</div>
+								<div class="form-group form-inline">
+									<select name="province" id="province" class="form-control">
+										<option value="">-- Chose Province --</option>
+									</select> &nbsp;
+									<!-- <br> -->
+									<select name="city" id="city" class="form-control">
+										<option value="">-- Chose City--</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<input type="text" name="districts" class="form-control" placeholder="Sub District" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="address" class="form-control" placeholder="Address" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="districts" class="form-control" placeholder="District" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="districts" class="form-control" placeholder="Kode Pos" />
+								</div>
+							</div>
 						</div>
+					</div>
+				</form>						
+			</div>
 
+			<div class="col-sm-6">
+				<form>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							BANK ACCOUNT
+							<a href="#" style="color:#FFF;" data-toggle="modal" data-target="#modal_bank">
+								<i class="fa fa-edit pull-right"></i>
+							</a>
+						</div>
+						<div class="panel-body" style="height:65vh;">
+							<div class="form-group">
+								<input type="text" name="bank_names" class="form-control" placeholder="Bank Name" />
+							</div>
+							<div class="form-group">
+								<input type="text" name="account_numbers" class="form-control" placeholder="Account Number" />
+							</div>
+							<div class="form-group">
+								<input type="text" name="account_holder" class="form-control" placeholder="Account Holder Name" />
+							</div>
+						</div>
+					</div>
+				</form>						
+			</div>
+			<div class="col-md-12">
+				<h3 class="text-center">
+					<a href="#collapseDocument" style="color:#000;text-decoration:none;" data-toggle="collapse" expanded="false" aria-controls="collapseDocument" >DOCUMENT&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></a>
+				</h3>
+				<div id="collapseDocument" class="collapse col-md-10 col-md-offset-3">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">1.Upload KTP</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div class="panel-body">
+									<div id="dropzone">
+										<form class="dropzone needsclick" id="demo-upload" action="/upload">
+											<div class="dz-message needsclick">    
+												<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+												<span class="note needsclick">
+													<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+												 </span>
+												</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">2. Upload Surat Nikah</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div class="panel-body">
+									<div id="dropzone">
+										<form class="dropzone needsclick" id="demo-upload" action="/upload">
+											<div class="dz-message needsclick">    
+												<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+												<span class="note needsclick">
+													<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+												 </span>
+												</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">3. Upload Kartu Keluarga</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">4. Upload Rekening Koran</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">5. Upload NPWP</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">6. Upload Slip Gaji</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">7. Upload SIUP</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">8. Upload Kepemilikan Rumah</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">9. Upload Izin Rumah</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-warnings">
+								<div class="panel-heading">
+									<h3 class="panel-titles">10. Upload Laporan Keuangan</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div id="dropzone">
+									<form class="dropzone needsclick" id="demo-upload" action="/upload">
+										<div class="dz-message needsclick">    
+											<p class="text-center"> <a style="margin-top: 10px;" class="btn  btn-circle btn-lg btn-defaults"><i class="fa fa-arrow-up"></i></a></p>
+											<span class="note needsclick">
+												<p class="text-center">Drop File here Or <a href="">CLick</a> To upload</p> 
+											 </span>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+    </div>
+	<!-- footer -->
+	<footer class="footer-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<div class="footer">
+						<h4 class="footer__title">COMPANY NAME</h4>
+						<div class="footer__cont">
+							<p>Jl. Bendungan Hilir No.112, RT.13/RW.6, Bend. Hilir,<br> Tanahabang, Kota Jakarta Pusat<br> Daerah Khusus Ibukota Jakarta 10210<br> Telepon: (021) 80648777</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="footer">
+						<h4 class="footer__title">OUR PRODUCTS</h4>
+						<div class="footer__cont">
+							<ul class="list-unstyled">
+								<li><p><a href="#">Cars</a></p></li>
+								<li><p><a href="#">Motorcycle</a></p></li>
+								<li><p><a href="#">Smartphones</a></p></li>
+								<li><p><a href="#">Electronics</a></p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
+	<!-- End footer -->
+
+	<!-- Modal -->
+	<div id="modal_personal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Edit Personal</h4>
+				</div>
+
+					<div class="modal-body col-md-12">
+						<div class="col-md-4">
+							<a href="#" class="thumbnail">
+								<img src="..." alt="...">
+							</a>
+						</div>	
+
+						<div class="col-md-7 col-md-offset-1">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<input type="text" name="Enames" class="form-control" placeholder="Name" />
+								</div>
+								<div class="form-group">
+									<input type="email" name="Eemails" class="form-control" placeholder="Email" />
+								</div>
+								<div class="form-group">
+									<input type="number" name="Ephones" class="form-control" placeholder="Telephone" />
+								</div>
+								<div class="form-inline">
+									<div class="form-group">
+										<select name="Eprovince" id="Eprovince" class="form-control">
+											<option value="">-- Chose Province --</option>
+										</select>
+
+										<select name="Ecity" id="Ecity" class="form-control">
+											<option value="">-- Chose City--</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" name="Edistricts" class="form-control" placeholder="District" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="Edistricts" class="form-control" placeholder="Sub District" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="Edistricts" class="form-control" placeholder="Kode pos" />
+								</div>
+								<div class="form-group">
+									<input type="text" name="Eaddress" class="form-control" placeholder="Address" />
+								</div>					
+							</div>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+						<button type="button" class="btn btn-primary">Save</button>
+					</div>
 			</div>
 		</div>
 	</div>
-	<!-- end </content> -->
 
-	<!-- Footer -->
+	<div id="modal_bank" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Edit Account Bank</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" name="Ebank_names" class="form-control" placeholder="Bank Name" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="Eaccount_numbers" class="form-control" placeholder="Account Number" />
+					</div>
+					<div class="form-group">
+						<input type="text" name="Eaccount_holder" class="form-control" placeholder="Account Holder Name" />
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+					<button type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End ./Modal -->
 
-	<footer class="navbar navbar-default navbar-fixed-bottom">
-		<div class="text-center">Footer</div>
-	</footer>
-	<!-- end </footer> -->
-	
+	<script type="text/javascript">
+		
+			// Now fake the file upload, since GitHub does not handle file uploads
+			// and returns a 404
+				var minSteps = 6,
+			    maxSteps = 60,
+			    timeBetweenSteps = 100,
+			    bytesPerStep = 100000;
 
-	
-	
+			dropzone.uploadFiles = function(files) {
+			  var self = this;
 
-	
+			  for (var i = 0; i < files.length; i++) {
+
+			    var file = files[i];
+			    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+			    for (var step = 0; step < totalSteps; step++) {
+			      var duration = timeBetweenSteps * (step + 1);
+			      setTimeout(function(file, totalSteps, step) {
+			        return function() {
+			          file.upload = {
+			            progress: 100 * (step + 1) / totalSteps,
+			            total: file.size,
+			            bytesSent: (step + 1) * file.size / totalSteps
+			          };
+
+			          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+			          if (file.upload.progress == 100) {
+			            file.status = Dropzone.SUCCESS;
+			            self.emit("success", file, 'success', null);
+			            self.emit("complete", file);
+			            self.processQueue();
+			            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+			          }
+			        };
+			      }(file, totalSteps, step), duration);
+			    }
+			  }
+			}
+	</script>
