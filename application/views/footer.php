@@ -128,7 +128,6 @@
 	<!-- JavaScript -->
 	<script type="text/javascript" src="<?= base_url() ?>assets/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?= base_url() ?>assets/js/effect.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>assets/js/dropzone.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.matchHeight-min.js"></script>
 	<script>
@@ -139,44 +138,64 @@
 	<!-- end ./ -->
     <script type="text/javascript">
 		
-			// Now fake the file upload, since GitHub does not handle file uploads
-			// and returns a 404
-				var minSteps = 6,
-			    maxSteps = 60,
-			    timeBetweenSteps = 100,
-			    bytesPerStep = 100000;
+	// Now fake the file upload, since GitHub does not handle file uploads
+	// and returns a 404
+	var minSteps = 6,
+	maxSteps = 60,
+	timeBetweenSteps = 100,
+	bytesPerStep = 100000;
 
-			dropzone.uploadFiles = function(files) {
-			  var self = this;
+	dropzone.uploadFiles = function(files) {
+		var self = this;
 
-			  for (var i = 0; i < files.length; i++) {
+		for (var i = 0; i < files.length; i++) {
 
-			    var file = files[i];
-			    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+			var file = files[i];
+			totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 
-			    for (var step = 0; step < totalSteps; step++) {
-			      var duration = timeBetweenSteps * (step + 1);
-			      setTimeout(function(file, totalSteps, step) {
-			        return function() {
-			          file.upload = {
-			            progress: 100 * (step + 1) / totalSteps,
-			            total: file.size,
-			            bytesSent: (step + 1) * file.size / totalSteps
-			          };
+			for (var step = 0; step < totalSteps; step++) {
+				var duration = timeBetweenSteps * (step + 1);
+				setTimeout(function(file, totalSteps, step) {
+					return function() {
+						file.upload = {
+							progress: 100 * (step + 1) / totalSteps,
+							total: file.size,
+							bytesSent: (step + 1) * file.size / totalSteps
+						};
 
-			          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-			          if (file.upload.progress == 100) {
-			            file.status = Dropzone.SUCCESS;
-			            self.emit("success", file, 'success', null);
-			            self.emit("complete", file);
-			            self.processQueue();
-			            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-			          }
-			        };
-			      }(file, totalSteps, step), duration);
-			    }
-			  }
+						self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+						if (file.upload.progress == 100) {
+							file.status = Dropzone.SUCCESS;
+							self.emit("success", file, 'success', null);
+							self.emit("complete", file);
+							self.processQueue();
+	            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+	        }
+	    };
+	}(file, totalSteps, step), duration);
 			}
+		}
+	}
+
+    /**	Load data api**/
+    $(document).ready(function() {
+
+	   //first get url api 
+	   var URL = "<?= site_url("profile/get_user") ?>";
+	   
+	    //method ajax post
+	    $.ajax({
+		    method: "POST",
+		    url: URL,
+		    data: {
+		        token:
+					"FtZ0qJggMXhhg4sMSc3Is5sA3nyqGCye",
+		    },
+		    success: function(data, textStatus, xhr) {
+		        console.log(xhr);
+		    },
+		});
+    });
 	</script>
 </body>
 </html>

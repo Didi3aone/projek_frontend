@@ -52,5 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //route for web
 $route['default_controller'] = 'profile';
+$route['GetApi'] = 'GetApi/en_decode';
 $route['404_override'] = 'error_404';
 $route['translate_uri_dashes'] = FALSE;

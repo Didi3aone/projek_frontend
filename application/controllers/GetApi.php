@@ -11,6 +11,15 @@ class GetApi extends CI_Controller {
 
 	public function get_user()
 	{
+		$key = $this->input->post('token');
+		if(!$key) {
+			echo json_encode( array("error"=>1, "msg"=>"Data Fail") );
+		}
+
+
+		$url = "api3carmarket.towert.win/user2/get_profile";
+		return true;
+	
 	}
 
 	public function post_user()

@@ -30,4 +30,42 @@ class Profile extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+	public function get_user()
+	{
+		$url = "api3carmarket.towert.win/user2/get_profile";
+		return true;
+	}
+
+	public function post_user()
+	{
+
+	}
+
+	public function delete_user()
+	{
+
+	}
+
+	public function put_user()
+	{
+
+	}
+
+	public function en_decode($data = null)
+	{
+		if ( is_null($data)) {
+			echo json_encode( array("error"=>1, "msg"=>"Data Fail") );
+			return false;
+		}
+
+		$data = $this->input->post("params", TRUE);
+		$key = "banana";
+		$method ="AES-256-ECB";
+
+		$result = openssl_decrypt ($data, $method, $key);
+		echo json_encode( array("error"=>0, "msg"=>$result) );
+		return true;
+	}
+
 }
