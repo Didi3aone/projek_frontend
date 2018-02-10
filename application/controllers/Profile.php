@@ -33,8 +33,8 @@ class Profile extends CI_Controller {
 
 	public function get_user()
 	{
-		$url = "api3carmarket.towert.win/user2/get_profile";
-		return true;
+		// $url = "api3carmarket.towert.win/user2/get_profile";
+		// return true;
 	}
 
 	public function post_user()
@@ -54,10 +54,10 @@ class Profile extends CI_Controller {
 
 	public function en_decode($data = null)
 	{
-		if ( is_null($data)) {
-			echo json_encode( array("error"=>1, "msg"=>"Data Fail") );
-			return false;
-		}
+		// if ( is_null($data)) {
+		// 	echo json_encode( array("error"=>1, "msg"=>"Data Fail") );
+		// 	return false;
+		// }
 
 		$data = $this->input->post("params", TRUE);
 		$key = "banana";

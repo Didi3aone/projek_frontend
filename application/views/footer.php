@@ -181,18 +181,20 @@
     $(document).ready(function() {
 
 	   //first get url api 
-	   var URL = "<?= site_url("profile/get_user") ?>";
+	   var URL = "<?= site_url("profile/en_decode") ?>";
 	   
 	    //method ajax post
 	    $.ajax({
 		    method: "POST",
-		    url: URL,
+		    url: "http://api3carmarket.towert.win/user2/get_profile",
 		    data: {
-		        token:
-					"FtZ0qJggMXhhg4sMSc3Is5sA3nyqGCye",
+		       token:
+				"FtZ0qJggMXhhg4sMSc3Is5sA3nyqGCye",
 		    },
-		    success: function(data, textStatus, xhr) {
-		        console.log(xhr);
+		    // contentType: "application/json",
+		    success: function(data) {
+		        // console.log(data);
+		        $("#div1").load(URL, {"params":data.response} );
 		    },
 		});
     });

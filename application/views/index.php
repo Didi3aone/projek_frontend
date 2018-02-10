@@ -1,3 +1,4 @@
+<div id="div1"><h2>Hasil</h2></div>
  <!-- Fixed navbar -->
 <nav class="navbar navbar-default">
     <div class="container">
