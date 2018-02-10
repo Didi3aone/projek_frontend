@@ -55,15 +55,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log in <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <form action="#" onsubmit="return false" id="form-login">
-                                <!-- <li class="form-group has-feedback">
-                                    <input name="email" type="email" class="form-control" placeholder="Email" required="required" data-validation="required">
-                                    <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true">
-                                </li>
-                                <li class="form-group has-feedback">
-                                    <input name="password" type="password" class="form-control" placeholder="Password" required="required" data-validation="required">
-                                    <span class="glyphicon glyphicon-eye-close form-control-feedback" aria-hidden="true">
-                                </li> -->
-
                                 <!-- Metronic -->
                                 <li class="form-group form-md-line-input form-md-floating-label">
                                     <input name="email" type="email" class="form-control" id="input-email" required="required">
@@ -97,9 +88,11 @@
                 <form class="navbar-form">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search Here">
+                            <input type="text" class="form-control" placeholder="Search Here" style="border-right:none;">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                <button class="btn btn-default" type="submit" style="border-left:none;">
+                                	<span class="glyphicon glyphicon-search"></span>
+                               	</button>
                             </span>
                         </div>
                     </div>
@@ -110,9 +103,12 @@
 
 		<!-- end </nav> -->
 	<div class="container">
-		<div class="col-sm-12">
-			<div class="col-xs-12 col-md-8" style="margin-top: 15px; margin-bottom: 10px;">USER PROFILE</div><br />
-			<div class="col-xs-8 col-md-4" style="margin-bottom: 10px;"><a  style="margin-right: 10px;" href="" class="btn btn-primary btn-lg">Swittch Account as Vendo</a></div>
+			<div class="col-sm-12">
+				<br /><b>USER PROFILE</b>
+			</div>
+			<div class="col-sm-12 text-right">
+				<p><a href="" class="btn btn-primary btn-md text-right">Swittch Account as Vendo</a></p>
+			</div>
 			<div class="col-sm-6">
 				<form class="form-horizontal">
 					<div class="panel panel-primary">
@@ -122,11 +118,11 @@
 								<i class="fa fa-edit pull-right"></i>
 							</a>
 						</div>
-						<div class="panel-body" style="height: 100%;">
+						<div class="panel-body">
 							<div class="col-sm-4">
-								<a href="#" class="thumbnail">
-										<img src="..." alt="...">
-								 	</a>
+								<a href="#" class="thumbnail text-center">
+									<img src="assets/icons/avatar.png" alt="..." class="fa fa-5x">
+								</a>
 							</div>
 							<div class="col-sm-8">
 								<div class="form-group">
@@ -174,7 +170,7 @@
 								<i class="fa fa-edit pull-right"></i>
 							</a>
 						</div>
-						<div class="panel-body" style="height: 50vh;">
+						<div class="panel-body" style="height:65vh;">
 							<div class="form-group">
 								<input type="text" name="bank_names" class="form-control" placeholder="Bank Name" />
 							</div>
