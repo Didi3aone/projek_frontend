@@ -1,4 +1,4 @@
-<!-- footer -->
+`<!-- footer -->
 	<footer class="footer-wrap">
 		<div class="container">
 			<div class="row">
@@ -191,10 +191,12 @@
 		       token:
 				"FtZ0qJggMXhhg4sMSc3Is5sA3nyqGCye",
 		    },
-		    // contentType: "application/json",
+		    dataType: "JSON",
 		    success: function(data) {
-		        // console.log(data);
-		        $("#div1").load(URL, {"params":data.response} );
+		        console.log(data.response);
+		        $("#div1").load(URL, {"params":data.response}, function(res){
+		        	console.log(res);
+		        });
 		    },
 		});
     });

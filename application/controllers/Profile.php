@@ -52,7 +52,7 @@ class Profile extends CI_Controller {
 
 	}
 
-	public function en_decode($data = null)
+	public function en_decode()
 	{
 		// if ( is_null($data)) {
 		// 	echo json_encode( array("error"=>1, "msg"=>"Data Fail") );
@@ -63,8 +63,12 @@ class Profile extends CI_Controller {
 		$key = "banana";
 		$method ="AES-256-ECB";
 
+		if ( is_null($data) ) {
+			echo json_encode( array("error"=>1, "msg"=>"is NULL") );
+		}
+
 		$result = openssl_decrypt ($data, $method, $key);
-		echo json_encode( array("error"=>0, "msg"=>$result) );
+		echo $result;
 		return true;
 	}
 
