@@ -46,9 +46,8 @@
 	/**	Load data api**/
     $(document).ready(function() {
 
-	    //first get url api 
-	    var URL = "<?= site_url("profile/en_decode") ?>";
-	    //method ajax post
+	    //_get api 
+	    var URL = "<?php echo site_url("profile/en_decode") ?>";
 	    $.ajax({
 		    method: "POST",
 		    url: "http://api3carmarket.towert.win/user2/get_profile",
@@ -58,11 +57,21 @@
 		    },
 		    dataType: "JSON",
 		    success: function(data) {
-		        console.log(data.response);
+		        console.log(data);
 		        $("#div1").load(URL, {"params":data.response}, function(res){
-		        	console.log(res);
+		     		if ( res.error == "1")
+		     		{
+		     			alert("Data Null");
+		     		}
+		     		var obj = JSON.parse(res)[0];
+		     		for( key in obj )
+		     		{
+		     			$("#"+key).val(obj[key]);
+		     		}
+
 		        });
 		    },
 		});
+		// ./end
     });
 </script>
