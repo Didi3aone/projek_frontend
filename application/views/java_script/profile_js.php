@@ -59,6 +59,7 @@
 		    success: function(data) {
 		        console.log(data);
 		        $("#div1").load(URL, {"params":data.response}, function(res){
+		        	/*debug*/ //console.log(res);
 		     		if ( res.error == "1")
 		     		{
 		     			alert("Data Null");
