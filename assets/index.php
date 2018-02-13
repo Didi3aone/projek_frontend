@@ -1,4 +1,3 @@
-<div id="msg"></div>
  <!-- Fixed navbar -->
 <nav class="navbar navbar-default">
     <div class="container">
@@ -70,7 +69,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
-<div id="akun">sds</div>
+
 <!-- end </nav> -->
 <div class="container">
 	<div class="col-sm-12">
@@ -97,13 +96,13 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="form-group">
-								<input type="text" id="akun" name="nama" class="form-control" placeholder="Name" />
+								<input type="text" name="names" class="form-control" placeholder="Name" />
 							</div>
 							<div class="form-group">
-								<input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+								<input type="email" name="emails" class="form-control" placeholder="Email" />
 							</div>
 							<div class="form-group">
-								<input type="number" id="handphone" name="handphone" class="form-control" placeholder="Telephone" />
+								<input type="number" name="phones" class="form-control" placeholder="Telephone" />
 							</div>
 							<div class="form-group form-inline">
 								<select name="province" id="province" class="form-control">
@@ -115,16 +114,16 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<input type="text" id="districtCode" name="districtCode" class="form-control" placeholder="District" />
+								<input type="text" name="districts" class="form-control" placeholder="District" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="kelurahanCode" name="kelurahanCode" class="form-control" placeholder="Sub District" />
+								<input type="text" name="districts" class="form-control" placeholder="Sub District" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="address" name="address" class="form-control" placeholder="Address" />
+								<input type="text" name="address" class="form-control" placeholder="Address" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="postCode" name="postCode" class="form-control" placeholder="Kode Pos" />
+								<input type="text" name="districts" class="form-control" placeholder="Kode Pos" />
 							</div>
 						</div>
 					</div>
@@ -143,13 +142,13 @@
 					</div>
 					<div class="panel-body" style="height:65vh;">
 						<div class="form-group">
-							<input type="text" id="bankName" name="bankName" class="form-control" placeholder="Bank Name" />
+							<input type="text" name="bank_names" class="form-control" placeholder="Bank Name" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountNumber" name="accountNumber" class="form-control" placeholder="Account Number" />
+							<input type="text" name="account_numbers" class="form-control" placeholder="Account Number" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountHolderName" name="accountHolderName" class="form-control" placeholder="Account Holder Name" />
+							<input type="text" name="account_holder" class="form-control" placeholder="Account Holder Name" />
 						</div>
 					</div>
 				</div>
