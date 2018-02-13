@@ -97,7 +97,6 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="form-group">
-								<input type="text" id="akun" name="nama" class="form-control" placeholder="Name" />
 								<input type="text" id="nama" name="nama" class="form-control form-control-modif" placeholder="Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
