@@ -472,3 +472,7 @@ color: #286090;
 background-color: #fff;
 border-color: #1888e8;
 }
+
+.form-control-modif:hover {
+  border:2px solid blue;
+}
