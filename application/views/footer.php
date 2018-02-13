@@ -46,34 +46,34 @@
 		          		</div>
 		          		<div class="col-md-7 col-md-offset-1">
 		          			<div class="form-group">
-								<input type="text" name="Enames" class="form-control" placeholder="Name" />
+								<input type="text" name="Enames" class="form-control form-control-modif" placeholder="Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="email" name="Eemails" class="form-control" placeholder="Email" />
+								<input type="email" name="Eemails" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="number" name="Ephones" class="form-control" placeholder="Telephone" />
+								<input type="number" name="Ephones" class="form-control form-control-modif" placeholder="Telephone" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group form-inline">
-								<select name="Eprovince" id="Eprovince" class="form-control">
+								<select name="Eprovince" id="Eprovince" class="form-control form-control-modif" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
 									<option value="">-- Chose Province --</option>
 								</select>
 
-								<select name="Ecity" id="Ecity" class="form-control">
+								<select name="Ecity" id="Ecity" class="form-control form-control-modif" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
 									<option value="">-- Chose City--</option>
 								</select>
 							</div>
 							<div class="form-group">
-								<input type="text" name="Edistricts" class="form-control" placeholder="District" />
+								<input type="text" name="Edistricts" class="form-control form-control-modif" placeholder="District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" name="Edistricts" class="form-control" placeholder="Sub District" />
+								<input type="text" name="Edistricts" class="form-control form-control-modif" placeholder="Sub District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" name="Edistricts" class="form-control" placeholder="Kode pos" />
+								<input type="text" name="Edistricts" class="form-control form-control-modif" placeholder="Kode pos" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" name="Eaddress" class="form-control" placeholder="Address" />
+								<input type="text" name="Eaddress" class="form-control form-control-modif" placeholder="Address" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>	
 		          		</div>
 		        	</div>
@@ -81,10 +81,10 @@
 				<div class="modal-footer">
 					 <div class="row">
           				<div class="col-md-4 text-left">
-          					<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+          					<button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:0;">Back</button>
           				</div>
           				<div class="col-md-4 col-md-offset-4">
-          					<button type="button" class="btn btn-primary">Save</button>
+          					<button type="button" class="btn btn-primary" style="border-radius:0;">Save</button>
           				</div>
         			</div>
 				</div>
@@ -101,22 +101,22 @@
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<input type="text" name="Ebank_names" class="form-control" placeholder="Bank Name" />
+						<input type="text" name="Ebank_names" class="form-control form-control-modif" placeholder="Bank Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 					</div>
 					<div class="form-group">
-						<input type="text" name="Eaccount_numbers" class="form-control" placeholder="Account Number" />
+						<input type="text" name="Eaccount_numbers" class="form-control form-control-modif" placeholder="Account Number" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 					</div>
 					<div class="form-group">
-						<input type="text" name="Eaccount_holder" class="form-control" placeholder="Account Holder Name" />
+						<input type="text" name="Eaccount_holder" class="form-control form-control-modif" placeholder="Account Holder Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 					</div>
 				</div>
 				<div class="modal-footer">
 					 <div class="row">
           				<div class="col-md-4 text-left">
-          					<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+          					<button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:0;">Back</button>
           				</div>
           				<div class="col-md-4 col-md-offset-4">
-          					<button type="button" class="btn btn-primary">Save</button>
+          					<button type="button" class="btn btn-primary" style="border-radius:0;">Save</button>
           				</div>
         			</div>
 				</div>
