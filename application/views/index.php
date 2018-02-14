@@ -70,7 +70,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
-<div id="akun">sds</div>
+<div id="div1"></div>
 <!-- end </nav> -->
 <div class="container">
 	<div class="col-sm-12">
