@@ -1,4 +1,3 @@
-<div id="msg"></div>
  <!-- Fixed navbar -->
 <nav class="navbar navbar-default">
     <div class="container">
@@ -80,6 +79,12 @@
 		<div class="col-sm-12 text-right">
 			<p><a href="" class="btn btn-primary btn-md text-right" style="border-radius:0;">Swittch Account as Vendo</a></p>
 		</div>
+		<?php 
+		    // if($params != "") {
+		    	foreach($params as $key => $value):
+		    		// var_dump($params);
+		    // }
+		?>
 		<div class="col-sm-6">
 			<form class="form-horizontal">
 				<div class="panel panel-primary">
@@ -97,35 +102,43 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="form-group">
-								<input type="text" id="nama" name="nama" class="form-control form-control-modif" placeholder="Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="nama" name="nama" value="<?php echo $value->nama; ?>" class="form-control form-control-modif" placeholder="Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="email" id="email" name="email" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="email" id="email" name="email" value="<?php echo $value->email ?>" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="handphone" name="handphone" class="form-control form-control-modif" placeholder="Telephone" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="handphone" name="handphone" value="<?php echo $value->handphone ?>" class="form-control form-control-modif" placeholder="Telephone" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group form-inline">
 								<div class="row">
 									<select name="province" id="province" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
+										<?php if($value->provinceCode != "") : ?>
+											<option value="<?php echo $value->provinceCode ?>"><?php echo $value->provinceCode ?></option>
+										<?php else :?>
 										<option value="">-- Chose Province --</option>
+										<?php endif;?>
 									</select>
-									<select name="city" id="city" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
+									<select name="cityCode" id="city" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
+										<?php if($value->cityCode !="") :?>
+											<option value="<?php echo $value->cityCode?>"><?php echo $value->cityCode?></option>
+											<?php else: ?>
 										<option value="">-- Chose City--</option>
+										<?php endif?>
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="text" id="districtCode" name="districtCode" class="form-control form-control-modif" placeholder="District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="districtCode" value="<?php echo $value->districtCode ?>" name="districtCode" class="form-control form-control-modif" placeholder="District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="kelurahanCode" name="kelurahanCode" class="form-control form-control-modif" placeholder="Sub District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="kelurahanCode" value="<?php echo $value->kelurahanCode ?>" name="kelurahanCode" class="form-control form-control-modif" placeholder="Sub District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="address" name="address" class="form-control form-control-modif" placeholder="Address" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="address" name="address" value="<?php echo $value->address ?>" class="form-control form-control-modif" placeholder="Address" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="postCode" name="postCode" class="form-control form-control-modif" placeholder="Kode Pos" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" id="postCode" name="postCode" value="<?= $value->postCode ?>" class="form-control form-control-modif" placeholder="Kode Pos" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 							</div>
 						</div>
 					</div>
@@ -144,13 +157,13 @@
 					</div>
 					<div class="panel-body" style="height:65vh;">
 						<div class="form-group">
-							<input type="text" id="bankName" name="bankName" class="form-control form-control-modif" placeholder="Bank Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" id="bankName" value="<?= $value->bankName ?>" name="bankName" class="form-control form-control-modif" placeholder="Bank Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountNumber" name="accountNumber" class="form-control form-control-modif" placeholder="Account Number" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" id="accountNumber" value="<?= $value->accountNumber ?>" name="accountNumber" class="form-control form-control-modif" placeholder="Account Number" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountHolderName" name="accountHolderName" class="form-control form-control-modif" placeholder="Account Holder Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" id="accountHolderName" value="<?= $value->accountHolderName ?>" name="accountHolderName" class="form-control form-control-modif" placeholder="Account Holder Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
 						</div>
 					</div>
 				</div>
@@ -445,4 +458,5 @@
 			</div>
 		</div>
 	</div>
+<?php endforeach;?>
 </div>
