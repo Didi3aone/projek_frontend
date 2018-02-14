@@ -1,4 +1,3 @@
-<div id="msg"></div>
  <!-- Fixed navbar -->
 <nav class="navbar navbar-default">
     <div class="container">
@@ -70,7 +69,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
-<div id="akun">sds</div>
+
 <!-- end </nav> -->
 <div class="container">
 	<div class="col-sm-12">
@@ -78,7 +77,7 @@
 			<br /><b>USER PROFILE</b>
 		</div>
 		<div class="col-sm-12 text-right">
-			<p><a href="" class="btn btn-primary btn-md text-right" style="border-radius:0;">Swittch Account as Vendo</a></p>
+			<p><a href="" class="btn btn-primary btn-md text-right">Swittch Account as Vendo</a></p>
 		</div>
 		<div class="col-sm-6">
 			<form class="form-horizontal">
@@ -97,35 +96,34 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="form-group">
-								<input type="text" id="nama" name="nama" class="form-control form-control-modif" placeholder="Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" name="names" class="form-control" placeholder="Name" />
 							</div>
 							<div class="form-group">
-								<input type="email" id="email" name="email" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="email" name="emails" class="form-control" placeholder="Email" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="handphone" name="handphone" class="form-control form-control-modif" placeholder="Telephone" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="number" name="phones" class="form-control" placeholder="Telephone" />
 							</div>
 							<div class="form-group form-inline">
-								<div class="row">
-									<select name="province" id="province" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
-										<option value="">-- Chose Province --</option>
-									</select>
-									<select name="city" id="city" class="form-control form-control-modif" placeholder="Email" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0">
-										<option value="">-- Chose City--</option>
-									</select>
-								</div>
+								<select name="province" id="province" class="form-control">
+									<option value="">-- Chose Province --</option>
+								</select> &nbsp;
+								<!-- <br> -->
+								<select name="city" id="city" class="form-control">
+									<option value="">-- Chose City--</option>
+								</select>
 							</div>
 							<div class="form-group">
-								<input type="text" id="districtCode" name="districtCode" class="form-control form-control-modif" placeholder="District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" name="districts" class="form-control" placeholder="District" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="kelurahanCode" name="kelurahanCode" class="form-control form-control-modif" placeholder="Sub District" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" name="districts" class="form-control" placeholder="Sub District" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="address" name="address" class="form-control form-control-modif" placeholder="Address" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" name="address" class="form-control" placeholder="Address" />
 							</div>
 							<div class="form-group">
-								<input type="text" id="postCode" name="postCode" class="form-control form-control-modif" placeholder="Kode Pos" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+								<input type="text" name="districts" class="form-control" placeholder="Kode Pos" />
 							</div>
 						</div>
 					</div>
@@ -144,13 +142,13 @@
 					</div>
 					<div class="panel-body" style="height:65vh;">
 						<div class="form-group">
-							<input type="text" id="bankName" name="bankName" class="form-control form-control-modif" placeholder="Bank Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" name="bank_names" class="form-control" placeholder="Bank Name" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountNumber" name="accountNumber" class="form-control form-control-modif" placeholder="Account Number" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" name="account_numbers" class="form-control" placeholder="Account Number" />
 						</div>
 						<div class="form-group">
-							<input type="text" id="accountHolderName" name="accountHolderName" class="form-control form-control-modif" placeholder="Account Holder Name" style="border-top:0;border-left:0;border-right:0;box-shadow:none;border-radius:0" />
+							<input type="text" name="account_holder" class="form-control" placeholder="Account Holder Name" />
 						</div>
 					</div>
 				</div>
