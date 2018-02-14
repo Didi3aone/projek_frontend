@@ -53,37 +53,24 @@
 		    url: "http://api3carmarket.towert.win/user2/get_profile",
 		    data: {
 		       token:
-				"FtZ0qJggMXhhg4sMSc3Is5sA3nyqGCye",
+				"351UlmMJqiy2oFOiK9ye4HyTzbx1JRlc",
 		    },
 		    dataType: "JSON",
 		    success: function(data) {
-                console.log(data);
-		    	$.ajax({
-		    		method: "POST",
-		    		url : URL,
-		    		data: {
-		    			params:data.response
-		    		},
-		    		dataType:'json',
-		    		success: function(response) {
-                        console.log(response);
-		    		}
-		    	})
-		        // console.log(data);
-		        // $("#div1").load(URL, {"params":data.response});
-		            //  	/*debug*/ //console.log(res);
+		        console.log(data);
+		        $("#div1").load(URL, {"params":data.response}, function(res){
+		        	/*debug*/ //console.log(res);
+		     		if ( res.error == "1")
+		     		{
+		     			alert("Data Null");
+		     		}
+		     		var obj = JSON.parse(res)[0];
+		     		for( key in obj )
+		     		{
+		     			$("#"+key).val(obj[key]);
+		     		}
 
-		     		// if ( res.error == "1")
-		     		// {
-		     		// 	alert("Data Null");
-		     		// }
-		     		// var obj = JSON.parse(res)[0];
-		     		// for( key in obj )
-		     		// {
-		     		// 	$("#"+key).val(obj[key]);
-		     		// }
-
-		       //  });
+		        });
 		    },
 		});
 		// ./end
